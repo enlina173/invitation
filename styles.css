@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Moulpali&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+/* Sakura Petal */
+.sakura {
+  position: fixed;
+  top: -100px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/Photo/rose.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* Falling */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Left–Right floating */
+@keyframes sway {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 60px;
+  }
+}
+
+/* Different petals */
+.s1 {
+  left: 10%;
+  animation-duration: 8s, 4s;
+}
+.s2 {
+  left: 20%;
+  animation-duration: 10s, 5s;
+}
+.s3 {
+  left: 50%;
+  animation-duration: 9s, 6s;
+}
+.s4 {
+  left: 70%;
+  animation-duration: 11s, 4s;
+}
+.s5 {
+  left: 90%;
+  animation-duration: 12s, 5s;
+}
+.s6 {
+  left: 30%;
+  animation-duration: 12s, 5s;
+}
+
+/* ==========  Home  ========== */
+
+/* Button */
+.btn {
+  text-align: center;
+  margin-top: 50px;
+}
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+  margin: 20px;
+  background: #eab9bc;
+  color: #f8f5ee;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #cc7c7d;
+}
+.image_1 {
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  background-image: url(/Photo/bac_cover.png);
+  background-attachment: fixed;
+}
+.image_overlay {
+  width: 100%;
+  height: 100vh;
+  color: #c56d69;
+}
+.letter {
+  text-align: center;
+  place-content: center;
+  align-items: center;
+  font-family: "Moulpali", sans-serif;
+}
+.letter h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+.letter h2 {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 400;
+}
+.letter img {
+  margin-top: 10px;
+  width: 15%;
+}
+.float-container {
+  position: relative;
+  display: inline-block;
+}
+.float-img {
+  margin-top: 50px;
+  margin-left: 300px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 900px) {
+  .btn {
+    margin-top: 100px;
+  }
+  button {
+    font-size: 22px;
+    margin: 20px;
+    border-radius: 25px;
+  }
+
+  .letter img {
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .letter h1 {
+    font-size: 30px;
+  }
+  .letter h2 {
+    font-size: 24px;
+  }
+
+  .float-img {
+    margin-top: 70px;
+  }
+}

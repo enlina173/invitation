@@ -1,0 +1,724 @@
+@import url("https://fonts.googleapis.com/css2?family=Moulpali&family=Roboto:ital,wght@0,100..900;1,100..900&family=Suwannaphum:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(img/bac_body.png);
+  --color1: #9c5b5b;
+  --color2: #6f7c3a;
+}
+
+body::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+/* Sakura Petal */
+.sakura {
+  position: fixed;
+  top: -100px;
+  width: 50px;
+  height: 50px;
+  background-image: url("img/sakura_fall.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+/* Falling */
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Left–Right floating */
+@keyframes sway {
+  0%,
+  100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 60px;
+  }
+}
+
+/* Different petals */
+.s1 {
+  left: 10%;
+  animation-duration: 8s, 4s;
+}
+.s2 {
+  left: 20%;
+  animation-duration: 10s, 5s;
+}
+.s3 {
+  left: 50%;
+  animation-duration: 9s, 6s;
+}
+.s4 {
+  left: 70%;
+  animation-duration: 11s, 4s;
+}
+.s5 {
+  left: 90%;
+  animation-duration: 12s, 5s;
+}
+.s6 {
+  left: 30%;
+  animation-duration: 12s, 5s;
+}
+
+/* ==========  Nav New  ========== */
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger */
+.menu-btn {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-btn span {
+  display: block;
+  height: 4px;
+  background: var(--color1);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* X animation */
+#menu-toggle:checked + .menu-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+#menu-toggle:checked + .menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.55);
+
+  /* Background blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0s linear 0.5s;
+
+  z-index: 1000;
+}
+
+/* Open */
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity 0.5s ease,
+    visibility 0s;
+}
+
+/* Menu items */
+.overlay ul {
+  list-style: none;
+  text-align: center;
+}
+
+.overlay li {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s ease;
+}
+
+#menu-toggle:checked ~ .overlay li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger */
+.overlay li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.overlay li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.overlay li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.overlay li:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.overlay li:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* Link style (label acting as link) */
+.overlay label {
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: "Odor Mean Chey", serif;
+}
+
+.overlay label:hover {
+  color: var(--color1);
+}
+
+/* ==========  Home  ========== */
+
+.invitation {
+  margin: auto;
+  text-align: center;
+  color: var(--color1); /* PINK */
+}
+
+.invitation h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Moulpali", sans-serif;
+}
+
+.parents {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 2;
+  font-family: "Moulpali", sans-serif;
+}
+
+.title {
+  font-size: 26px;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.description {
+  width: 90%;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-family: "Suwannaphum", serif;
+}
+
+.couple-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* space between name–monogram–name */
+  margin: 30px 0;
+}
+
+.person .name {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2;
+  font-family: "Moulpali", sans-serif;
+  text-align: center;
+}
+
+.center-monogram {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  color: #c4a26d; /* gold */
+  margin: 0 20px;
+}
+
+.details {
+  margin-top: 30px;
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: "Suwannaphum", serif;
+}
+
+.map-btn {
+  display: inline-block;
+  margin: 25px auto;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #d88c9a, #f3b5c5);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-family: "Suwannaphum", serif;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.map-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/************  Groom & Bride  ************/
+.two {
+  margin-top: auto;
+}
+
+.card {
+  width: 100%;
+  padding: 30px 100px 40px;
+  position: relative;
+  font-family: "Moulpali", sans-serif;
+}
+
+/* Groom section (top left corner) */
+.groom-section {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 120px;
+}
+
+/* Bride section (bottom right corner) */
+.bride-section {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 120px;
+  margin-top: 20px;
+}
+
+/* Image + text block */
+.person1 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Oval photo frame */
+.photo-frame img {
+  width: 220px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50% / 60%;
+  border: 5px solid #c0465c;
+  background: white;
+}
+
+.label {
+  margin: 30px;
+  color: var(--color1);
+}
+
+.name1 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 3px;
+  line-height: 2;
+  font-weight: bold;
+}
+
+/* Centered & symbol */
+.ampersand {
+  font-size: 55px;
+  color: var(--color1);
+  text-align: center;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+/* Floating flower base style */
+.float {
+  position: absolute;
+  width: 55px;
+  opacity: 0.75;
+  animation:
+    floatUp 10s linear infinite,
+    rotate 12s linear infinite;
+  pointer-events: none;
+}
+
+/* Example positions */
+.f1 {
+  left: 10%;
+  bottom: -40px;
+  animation-duration: 13s;
+}
+
+.f2 {
+  right: 15%;
+  bottom: -60px;
+  width: 70px;
+  animation-duration: 11s;
+}
+
+.f3 {
+  left: 40%;
+  bottom: -80px;
+  width: 45px;
+  animation-duration: 15s;
+}
+
+/* Float upward animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-500px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* Gentle rotation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Larger screens */
+/* @media (min-width: 600px) {
+  .photo-frame img {
+    width: 180px;
+    height: 230px;
+  }
+  .ampersand {
+    font-size: 70px;
+  }
+} */
+
+/* schedule */
+.three {
+  margin: 0;
+  padding: 60px 0;
+  font-family: "Odor Mean Chey", serif;
+}
+
+.agenda-container {
+  min-height: 780px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.agenda-content {
+  text-align: center;
+  color: var(--color1);
+}
+
+.agenda-content h1 {
+  font-size: 46px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.agenda-content h2 {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--color2);
+}
+
+.schedule .pelea {
+  margin: 30px 0;
+}
+
+.schedule .hour {
+  font-size: 26px;
+  color: var(--color1);
+}
+
+.schedule p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: var(--color2);
+}
+
+.agenda-content img {
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+
+/* Gallery */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 40px 20px 0 20px;
+  font-family: "Poppins", sans-serif;
+}
+.container .heading {
+  width: 80%;
+  padding-bottom: 50px;
+}
+.container .heading h3 {
+  font-size: 3em;
+  font-weight: bolder;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--color1);
+  color: var(--color1);
+}
+.container .heading h3 span {
+  font-weight: 100;
+}
+
+/* Grid */
+.mosaic-grid {
+  /* max-width: 430px; */
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.item1 {
+  margin-bottom: 8px;
+}
+
+/* Items */
+.item {
+  background: #d18484;
+  border-radius: 5px;
+  /* overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: reveal linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%; */
+}
+
+/* Square */
+.small {
+  aspect-ratio: 1 / 1;
+}
+
+/* Wide */
+.wide {
+  grid-column: span 2;
+  aspect-ratio: 2 / 1;
+}
+
+/* Image */
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animation */
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Time Count down*/
+
+.countdown-section2 {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  font-family: "Odor Mean Chey", serif;
+}
+
+/* Card */
+.countdown-card2 {
+  width: 400px;
+  background: #f9eeee;
+  border: 2px solid #d9a5a5;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.countdown-title2 {
+  font-size: 18px;
+  color: var(--color1);
+  margin-bottom: 10px;
+}
+
+/* Countdown row */
+.countdown2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+/* Time box */
+.time-box2 {
+  width: 65px;
+  padding: 8px 0;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Number */
+.time2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color1);
+}
+
+/* Label */
+.label2 {
+  font-size: 16px;
+  color: var(--color2);
+}
+
+/* Footer */
+.footer2 {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color1);
+}
+
+/* Now add responsive rules for phone screens */
+@media (max-width: 600px) {
+  .invitation {
+    padding: 120px 0;
+  }
+
+  .parents {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .person .name {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .center-monogram {
+    font-size: 50px; /* scale down for mobile */
+    margin: 5px 0;
+  }
+
+  .ornament-top,
+  .ornament-bottom {
+    font-size: 26px;
+    margin: 5px 0;
+  }
+
+  .monogram-wrapper {
+    gap: 10px;
+  }
+
+  .ornament-left,
+  .ornament-right {
+    font-size: 34px;
+  }
+
+  /************  Groom & Bride  ************/
+  .card {
+    padding: 30px 15px 40px;
+  }
+
+  .groom-section {
+    padding-left: 25px;
+  }
+  .bride-section {
+    padding-right: 10px;
+  }
+
+  /* Schedule */
+  .agenda-content h1 {
+    font-size: 32px;
+  }
+
+  .agenda-content h2 {
+    font-size: 24px;
+  }
+
+  .schedule .pelea {
+    margin: 30px 0;
+  }
+
+  .schedule .hour {
+    font-size: 22px;
+  }
+
+  .schedule p {
+    font-size: 20px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description,
+  .details {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .container .heading {
+    width: 100%;
+  }
+  .container .heading h3 {
+    font-size: 3em;
+  }
+
+  /* Count Time */
+  .countdown-card2 {
+    width: 350px;
+  }
+}
