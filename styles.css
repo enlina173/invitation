@@ -25,7 +25,7 @@ body::before {
   top: -100px;
   width: 30px;
   height: 30px;
-  background-image: url("/Photo/rose.png");
+  background-image: url("img/rose.png");
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -107,7 +107,7 @@ button:hover {
   height: auto;
   background-position: center;
   background-size: cover;
-  background-image: url(/Photo/bac_cover.png);
+  background-image: url(img/bac_cover.png);
   background-attachment: fixed;
 }
 .image_overlay {
