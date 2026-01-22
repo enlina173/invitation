@@ -495,17 +495,16 @@ body::before {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 40px 20px 0 20px;
+  margin: 10px 150px 0 150px;
   font-family: "Battambang", system-ui;
 }
 .container .heading {
   width: 80%;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 .container .heading h3 {
   font-size: 3em;
   font-weight: bolder;
-  padding-bottom: 10px;
   border-bottom: 3px solid var(--color1);
   color: var(--color1);
 }
@@ -566,8 +565,8 @@ body::before {
 }
 
 /*Time Count down*/
-
 .countdown-section2 {
+  margin-top: 40px;
   padding: 40px 0;
   display: flex;
   justify-content: center;
@@ -626,6 +625,27 @@ body::before {
   margin-top: 10px;
   font-size: 14px;
   color: var(--color1);
+}
+
+/*Apology*/
+.apology {
+  height: 100%;
+  padding: 50px 0;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: "Odor Mean Chey", serif;
+  color: var(--color1);
+}
+
+.countdown-card2 h1 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+.countdown-card2 p {
+  font-size: 12px;
+  line-height: 2.2;
+  margin: 15px 10px;
 }
 
 /* Now add responsive rules for phone screens */
@@ -718,6 +738,12 @@ body::before {
     font-size: 20px;
   }
 
+  /* gallery */
+
+  .container {
+    margin: 15px 20px 0 20px;
+  }
+
   .container .heading {
     width: 100%;
   }
@@ -725,7 +751,7 @@ body::before {
     font-size: 3em;
   }
 
-  /* Count Time */
+  /* Count Time and Apology*/
   .countdown-card2 {
     width: 350px;
   }
