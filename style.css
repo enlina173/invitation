@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Moulpali&family=Roboto:ital,wght@0,100..900;1,100..900&family=Suwannaphum:wght@100;300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Odor+Mean+Chey&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Moulpali&family=Odor+Mean+Chey&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,7 +8,7 @@
 body {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
-  width: 100%;
+
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -228,18 +227,19 @@ body {
 }
 
 .title {
-  font-size: 26px;
+  font-size: 20px;
   margin: 20px 0;
   font-weight: 700;
+  font-family: "Moulpali", sans-serif;
 }
 
 .description {
   width: 90%;
   margin: auto;
   font-size: 18px;
-  line-height: 1.8;
+  line-height: 2;
   margin-bottom: 30px;
-  font-family: "Suwannaphum", serif;
+  font-family: "Battambang", system-ui;
 }
 
 .couple-row {
@@ -253,7 +253,7 @@ body {
 .person .name {
   font-size: 22px;
   font-weight: 600;
-  line-height: 2;
+  line-height: 2.2;
   font-family: "Moulpali", sans-serif;
   text-align: center;
 }
@@ -263,14 +263,14 @@ body {
 }
 
 .center-monogram img {
-  width: 80%;
+  width: 90%;
 }
 
 .details {
   margin-top: 30px;
   font-size: 18px;
   line-height: 1.8;
-  font-family: "Suwannaphum", serif;
+  font-family: "Battambang", system-ui;
 }
 
 .map-btn {
@@ -281,8 +281,8 @@ body {
   color: white;
   text-decoration: none;
   border-radius: 30px;
-  font-size: 15px;
-  font-family: "Suwannaphum", serif;
+  font-size: 18px;
+  font-family: "Battambang", system-ui;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
@@ -431,7 +431,7 @@ body {
 .three {
   margin: 0;
   padding: 60px 0;
-  font-family: "Odor Mean Chey", serif;
+  font-family: "Battambang", system-ui;
 }
 
 .agenda-container {
@@ -489,7 +489,7 @@ body {
   align-items: center;
   text-align: center;
   margin: 40px 20px 0 20px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Battambang", system-ui;
 }
 .container .heading {
   width: 80%;
@@ -624,17 +624,31 @@ body {
 /* Now add responsive rules for phone screens */
 @media (max-width: 600px) {
   .invitation {
-    padding: 120px 0;
+    padding: 130px 0;
   }
 
   .parents {
-    margin-bottom: 20px;
     font-size: 16px;
+    margin-bottom: 10px;
   }
 
   .person .name {
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 2.2;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .description,
+  .details {
+    font-size: 17px;
+    line-height: 1.6;
   }
 
   .couple-row {
@@ -695,16 +709,6 @@ body {
 
   .schedule p {
     font-size: 20px;
-  }
-
-  .title {
-    font-size: 20px;
-  }
-
-  .description,
-  .details {
-    font-size: 15px;
-    line-height: 1.6;
   }
 
   .container .heading {
