@@ -32,16 +32,29 @@ const timer = setInterval(() => {
   );
 }, 1000);
 
-/*!
- * jQuery JavaScript Library v3.7.1
- * https://jquery.com/
- *
- * Copyright OpenJS Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2023-08-28T13:37Z
- */
+// Setup the Observer
+const observerOptions = {
+  root: null, // use the viewport
+  threshold: 0.15, // trigger when 15% of the element is visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      // Stop observing once it's visible (optional)
+      // observer.unobserve(entry.target);
+    } else {
+      // Optional: remove "active" to make it animate every time you scroll up/down
+      entry.target.classList.remove("active");
+    }
+  });
+}, observerOptions);
+
+// Tell the observer which elements to watch
+const revealElements = document.querySelectorAll(".reveal");
+revealElements.forEach((el) => observer.observe(el));
+
 (!(function (a, b) {
   "use strict";
   "object" == typeof module && "object" == typeof module.exports
