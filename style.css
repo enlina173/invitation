@@ -671,7 +671,7 @@ body::before {
   transition-delay: 0.4s;
 }
 .reveal.delay-3 {
-  transition-delay: 0.6s;
+  transition-delay: 0.5s;
 }
 
 /* Now add responsive rules for phone screens */
