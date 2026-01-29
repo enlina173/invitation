@@ -51,40 +51,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Audio play
-const audio = document.getElementById("audio");
-const audioBtn = document.getElementById("audioBtn");
-
-let firstClick = true;
-
-// Play/Pause button click
-audioBtn.addEventListener("click", () => {
-  toggleAudio();
-});
-
-// Autoplay on first click anywhere
-document.addEventListener(
-  "click",
-  () => {
-    if (firstClick) {
-      audio.play();
-      audioBtn.textContent = "⏸";
-      firstClick = false;
-    }
-  },
-  { once: true },
-);
-
-function toggleAudio() {
-  if (audio.paused) {
-    audio.play();
-    audioBtn.textContent = "⏸";
-  } else {
-    audio.pause();
-    audioBtn.textContent = "▶";
-  }
-}
-
 // Tell the observer which elements to watch
 const revealElements = document.querySelectorAll(".reveal");
 revealElements.forEach((el) => observer.observe(el));

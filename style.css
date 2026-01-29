@@ -206,28 +206,6 @@ body::before {
 .overlay label:hover {
   color: var(--color1);
 }
-/* Audio play */
-.audio-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.2); /* translucent glass */
-  backdrop-filter: blur(10px); /* blur behind button */
-  color: var(--color1);
-  font-size: 26px;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
-  transition: transform 0.2s;
-}
-
-.audio-btn:hover {
-  transform: scale(1.1);
-}
 
 /* ==========  Home  ========== */
 
@@ -807,11 +785,5 @@ body::before {
   /* Count Time and Apology*/
   .countdown-card2 {
     width: 350px;
-  }
-  /* Audio play */
-  .audio-btn {
-    width: 55px;
-    height: 55px;
-    font-size: 24px;
   }
 }
