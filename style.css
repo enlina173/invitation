@@ -207,6 +207,38 @@ body::before {
   color: var(--color1);
 }
 
+/* Fixed circular button */
+#audioButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--color1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+#audioButton:hover {
+  background-color: var(--color2);
+  transform: scale(1.1);
+}
+
+/* Icon inside button */
+#audioButton i {
+  font-size: 22px;
+  color: white;
+}
+
 /* ==========  Home  ========== */
 
 .invitation {
@@ -228,9 +260,17 @@ body::before {
   justify-content: space-around;
   margin-bottom: 20px;
   font-size: 20px;
-  font-weight: 600;
   line-height: 2;
+}
+
+.font1 {
   font-family: "Moulpali", sans-serif;
+  font-weight: 600;
+}
+
+.font2 {
+  font-family: "Moul", serif;
+  font-weight: 500;
 }
 
 .title {
@@ -255,6 +295,8 @@ body::before {
   align-items: center;
   gap: 40px; /* space between name–monogram–name */
   margin: 30px 0;
+  font-family: "Moul", serif;
+  font-weight: 500;
 }
 
 .person .name {
@@ -354,7 +396,8 @@ body::before {
   line-height: 20px;
   margin-top: 3px;
   line-height: 2;
-  font-weight: bold;
+  font-family: "Moul", serif;
+  font-weight: 500;
 }
 
 /* Centered & symbol */
