@@ -206,37 +206,27 @@ body::before {
 .overlay label:hover {
   color: var(--color1);
 }
-
-/* Fixed circular button */
-#audioButton {
+/* Audio play */
+.audio-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--color1);
-  border: none;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2); /* translucent glass */
+  backdrop-filter: blur(10px); /* blur behind button */
+  color: var(--color1);
+  font-size: 26px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition:
-    background-color 0.3s,
-    transform 0.2s;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.2s;
 }
 
-#audioButton:hover {
-  background-color: var(--color2);
+.audio-btn:hover {
   transform: scale(1.1);
-}
-
-/* Icon inside button */
-#audioButton i {
-  font-size: 22px;
-  color: white;
 }
 
 /* ==========  Home  ========== */
@@ -572,12 +562,6 @@ body::before {
 .item {
   background: #d18484;
   border-radius: 5px;
-  /* overflow: hidden;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: reveal linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 30%; */
 }
 
 /* Square */
@@ -823,5 +807,11 @@ body::before {
   /* Count Time and Apology*/
   .countdown-card2 {
     width: 350px;
+  }
+  /* Audio play */
+  .audio-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
   }
 }

@@ -51,22 +51,39 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Audio Play
-const audio = document.getElementById("myAudio");
-const button = document.getElementById("audioButton");
-const icon = button.querySelector("i");
+// Audio play
+const audio = document.getElementById("audio");
+const audioBtn = document.getElementById("audioBtn");
 
-button.addEventListener("click", () => {
+let firstClick = true;
+
+// Play/Pause button click
+audioBtn.addEventListener("click", () => {
+  toggleAudio();
+});
+
+// Autoplay on first click anywhere
+document.addEventListener(
+  "click",
+  () => {
+    if (firstClick) {
+      audio.play();
+      audioBtn.textContent = "⏸";
+      firstClick = false;
+    }
+  },
+  { once: true },
+);
+
+function toggleAudio() {
   if (audio.paused) {
     audio.play();
-    icon.classList.remove("fa-play");
-    icon.classList.add("fa-pause");
+    audioBtn.textContent = "⏸";
   } else {
     audio.pause();
-    icon.classList.remove("fa-pause");
-    icon.classList.add("fa-play");
+    audioBtn.textContent = "▶";
   }
-});
+}
 
 // Tell the observer which elements to watch
 const revealElements = document.querySelectorAll(".reveal");
