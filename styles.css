@@ -90,10 +90,11 @@ body::before {
 .btn {
   text-align: center;
   margin-top: 50px;
+  font-family: "Odor Mean Chey", serif;
 }
 button {
   font-size: 18px;
-  padding: 12px 40px;
+  padding: 10px 35px;
   margin: 20px;
   background: #eab9bc;
   color: #f8f5ee;
@@ -200,10 +201,10 @@ button:hover {
 
 @media (max-width: 600px) {
   .btn {
-    margin-top: 80px;
+    margin-top: 50px;
   }
   button {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px;
     border-radius: 30px;
   }
